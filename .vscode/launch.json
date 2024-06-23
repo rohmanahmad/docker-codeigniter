@@ -12,6 +12,7 @@
       "pathMappings": {
         "/var/www/html/app1": "${workspaceFolder}/src/app1",
         "/var/www/html/app2": "${workspaceFolder}/src/app2",
+        "/var/www/html/ci-documentation": "${workspaceFolder}/src/ci-documentation",
       }
     }
   ]
