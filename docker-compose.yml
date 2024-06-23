@@ -4,20 +4,21 @@ networks:
 services:
   app:
     image: 'rohmanahmad/php8.3-apache-full:latest'
-    container_name: laravel_dev
+    container_name: codeigniter_dev
     stdin_open: true
     tty: true
     networks:
       - officenet
     ports:
-      - 3001:80
-      - 3010:3010
-      - 3011:3011
+      - 3000:80
+      - 3001:3001
+      - 3002:3002
     volumes:
       - ./src:/var/www/html
-      - ./apache.conf:/etc/apache2/sites-available/000-default.conf
-      - ./supervisor-laravel_10.conf:/etc/supervisor/conf.d/laravel_10.conf
-      - ./supervisor-laravel_11.conf:/etc/supervisor/conf.d/laravel_11.conf
+      - ./apache/ports.conf:/etc/apache2/ports.conf
+      - ./apache/vhosts/default.conf:/etc/apache2/sites-enabled/000-default.conf
+      - ./apache/vhosts/app1.conf:/etc/apache2/sites-enabled/app1.conf
+      - ./apache/vhosts/app2.conf:/etc/apache2/sites-enabled/app2.conf
     extra_hosts:
       - "host.docker.internal:host-gateway"
     environment:
