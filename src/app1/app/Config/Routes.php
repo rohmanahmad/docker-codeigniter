@@ -1,8 +1,4 @@
 <?php
 
-use CodeIgniter\Router\RouteCollection;
-
-/**
- * @var RouteCollection $routes
- */
-$routes->get('/', 'Home::index');
+require_once 'Routes/HomeRoutes.php';
+require_once 'Routes/UserRoutes.php';
