@@ -5,7 +5,6 @@ namespace App\Controllers\Swagger;
 use CodeIgniter\API\ResponseTrait;
 use App\Controllers\BaseController;
 
-
 class JsonSpecController extends BaseController
 {
     use ResponseTrait;

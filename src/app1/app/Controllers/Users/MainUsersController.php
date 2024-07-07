@@ -2,15 +2,25 @@
 
 namespace App\Controllers\Users;
 
-use OpenApi\Annotations as OA;
 use App\Controllers\BaseController;
+use OpenApi\Attributes as OA;
 
-/**
- * @OA\PathItem(
- *  description="Codeigniter API Specs",
- *  path="/products/{product}",
- * )
- */
+#[OA\Get(
+    path: "/api/v1/users",
+    summary: "List all Users",
+    security: [
+        [
+            'bearerAuth' => []
+        ]
+    ],
+    tags: ["Users"],
+    responses: [
+        new OA\Response(response: 200, description: "users retrieved success"),
+        new OA\Response(response: 403, description: "Unauthorized"),
+        new OA\Response(response: 404, description: "not found"),
+        new OA\Response(response: 500, description: "Server Error")
+    ]
+)]
 class MainUsersController extends BaseController
 {
     /**

@@ -8,7 +8,15 @@ use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
+use OpenApi\Attributes as OA;
 
+// #[OA\Info(title: env('app.name'), version: env('app.version'))]
+define('APP_NAME', env('app.name'));
+define('APP_VERSION', env('app.version'));
+define('APP_DESCRIPTION', env('app.description'));
+
+#[OA\Info(title: APP_NAME, version: APP_VERSION, description: APP_DESCRIPTION)]
+#[OA\Contact(name: 'Rohman Ahmad', email: 'rohmanmail@gmail.com', url: 'https://rohman.web.id')]
 /**
  * Class BaseController
  *
